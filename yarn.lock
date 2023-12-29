@@ -1469,6 +1469,20 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
+"@modules/chat@file:./modules/chat":
+  version "1.1.0"
+  dependencies:
+    is-url "^1.2.4"
+    pubnub "^4.33.0"
+    pubnub-react "^2.1.0"
+    react-native-emoji-selector "0.2.0"
+    react-native-fs "2.19.0"
+    react-native-gifted-chat "^2.1.0"
+    react-native-popup-menu "0.15.12"
+    react-native-video "5.2.1"
+    uuid "^8.3.2"
+    zustand "^3.5.13"
+
 "@modules/chat@file:./modules/chat/":
   version "1.1.0"
   dependencies:
