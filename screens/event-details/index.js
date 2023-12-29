@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  ScrollView,
-  Image,
-  Pressable
-} from "react-native";
+import { Text, View, StyleSheet, ScrollView, Image, Pressable } from "react-native";
 
 const EventDetails = () => {
   const [event, setEvent] = useState({});
@@ -20,43 +13,30 @@ const EventDetails = () => {
       info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat tellus a mattis ornare. Fusce sit amet libero id est iaculis hendrerit in quis nibh. \n \nProin porttitor velit nec purus consequat hendrerit. Aenean vel volutpat metus. Ut ullamcorper arcu tellus, non semper nisl lobortis vitae. Nulla sit amet risus risus. Vestibulum euismod accumsan nulla."
     });
   }, []);
-  return (
-    <View style={styles.container}>
+  return <View style={styles.container}>
       <ScrollView>
         <Image source={require("./assets/image.png")} style={styles.image} />
-        <Image
-          style={styles.scroller}
-          source={require("./assets/Slider.png")}
-        />
+        <Image style={styles.scroller} source={require("./assets/Slider.png")} />
         <View style={styles.body}>
           <View style={styles.header}>
             <View style={styles.details}>
               <Text style={styles.name}>{event.name}</Text>
               <View style={styles.location}>
-                <Image
-                  source={require("./assets/locationIcon.png")}
-                  style={styles.locationIcon}
-                />
+                <Image source={require("./assets/locationIcon.png")} style={styles.locationIcon} />
                 <Text style={styles.locationText}>
                   {event.location} - {event.distance}
                 </Text>
               </View>
             </View>
             <Pressable style={styles.roundButton}>
-              <Image
-                source={require("./assets/giftIcon.png")}
-                style={styles.giftIcon}
-              />
+              <Image source={require("./assets/giftIcon.png")} style={styles.giftIcon} />
               <Text style={styles.btnText}>Donate</Text>
             </Pressable>
           </View>
           <View style={styles.dateTimeContainer}>
             <View style={styles.dateTimeItem}>
               <View style={styles.iconContainer}>
-                <Image
-                  style={styles.icon}
-                  source={require("./assets/calendarIcon.png")}
-                />
+                <Image style={styles.icon} source={require("./assets/calendarIcon.png")} />
               </View>
               <View>
                 <Text style={styles.mainText}>{event.date}</Text>
@@ -65,10 +45,7 @@ const EventDetails = () => {
             </View>
             <View style={styles.dateTimeItem}>
               <View style={styles.iconContainer}>
-                <Image
-                  style={styles.icon}
-                  source={require("./assets/clockIcon.png")}
-                />
+                <Image style={styles.icon} source={require("./assets/clockIcon.png")} />
               </View>
               <View>
                 <Text style={styles.mainText}>{event.time}</Text>
@@ -83,9 +60,9 @@ const EventDetails = () => {
           <Button buttonText={"Book Event"} />
         </View>
       </ScrollView>
-    </View>
-  );
+    </View>;
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -195,7 +172,6 @@ const styles = StyleSheet.create({
     marginTop: 50
   }
 });
-
 export default EventDetails;
 
 const Button = params => {
@@ -209,20 +185,16 @@ const Button = params => {
   const btnText = {
     color: params.outline ? "#000" : textColor
   };
-  return (
-    <View style={buttonStyles.btnContainer}>
+  return <View style={buttonStyles.btnContainer}>
       <View style={!params.hideShadow ? buttonStyles.shadowContainer : null}>
-        <Pressable
-          style={[buttonStyles.btn, btnStyle, params.style]}
-          onPress={params.onPress}>
+        <Pressable style={[buttonStyles.btn, btnStyle, params.style]} onPress={params.onPress}>
           <Text style={[buttonStyles.btnText, btnText]}>
             {params.buttonText}
           </Text>
           <View style={styles.childrenContainer}>{params.children}</View>
         </Pressable>
       </View>
-    </View>
-  );
+    </View>;
 };
 
 const buttonStyles = StyleSheet.create({
@@ -245,7 +217,6 @@ const buttonStyles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-
     flexDirection: "row"
   },
   btnText: {
